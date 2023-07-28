@@ -3,7 +3,7 @@ import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 import Products from "./pages/Products/Products";
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-
+import Navbar from "./components/Navbar/Navbar";
 const productsData=[
   {id:"0",content:"Hair dryer",price:100,stock:3},
   {id:"1",content:"Dry Cleaner",price:40,stock:6},
@@ -32,10 +32,11 @@ function App() {
   const [products, setProducts]= useState(productsData)
 
   return (
+<>
 
     <div className={styles.app}>
-  
 <BrowserRouter>
+  <Navbar/>
 <Routes>
 <Route path="/products" exact element={
     <Products products={products} />
@@ -49,6 +50,7 @@ function App() {
 </BrowserRouter>
     </div>
 
+</>
   );
 }
 

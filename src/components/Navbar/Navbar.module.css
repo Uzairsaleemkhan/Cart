@@ -1,0 +1,16 @@
+.navbar{
+    padding: 1rem
+    ;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.item{
+    padding: 1rem 2rem;
+    background-color: azure;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
