@@ -19,3 +19,10 @@ margin: 0 auto;
     /* align-items: center; */
 
 }
+
+.checkout{
+    background-color: black;
+    color: white;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+}

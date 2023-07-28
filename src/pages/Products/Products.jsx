@@ -2,7 +2,7 @@ import styles from "./Products.module.css"
 import Product from "../../components/Product/Product"
 
 
-export default function Products({products}){
+export default function Products({products,onAdd}){
 
 
     return(
@@ -15,7 +15,7 @@ export default function Products({products}){
                     products.map(product=>(
 
                         <li key={product.id} className={styles.product}>
-                       <Product product={product}/>
+                       <Product product={product} onAdd={onAdd}/>
                         </li>
                     )
                 )

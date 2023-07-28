@@ -5,6 +5,11 @@ padding: 1rem;
 .itemCount{
 
 }
+.delete{
+    background-color: red;
+    padding:1rem 2rem ;
+    color:white;
+}
 .main{
     display: flex;
     align-items: center;

@@ -1,5 +1,5 @@
 import styles from "./Product.module.css";
-export default function Product ({product}){
+export default function Product ({product,onAdd}){
 
 
 
@@ -13,7 +13,9 @@ export default function Product ({product}){
                             <div className={styles.stock} style={product.stock>0?{color:"green"}:{color:"red"}}>{
                                 product.stock>0?"In Stock":"Out of Stock"
                             }</div>
-                            <button className={styles.button}>Add To Cart</button>
+                            <button onClick={()=>{
+                                onAdd(product)
+                            }} className={styles.button}>Add To Cart</button>
         </>
     )
 }

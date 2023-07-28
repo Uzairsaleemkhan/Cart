@@ -1,5 +1,5 @@
 import styles from "./CartItem.module.css"
-export default function CartItem({item}){
+export default function CartItem({item,onDelete}){
 
 
 
@@ -17,6 +17,9 @@ export default function CartItem({item}){
                                 <div className={styles.count}>{item.count}</div>
                             <button className={styles.minus}>-</button>
                         </div>
+                        <button className={styles.delete} onClick={_=>{
+                            onDelete(item)
+                        }} >Delete</button>
         </div>
         </>
     )

@@ -30,6 +30,23 @@ const productsData=[
 function App() {
 
   const [products, setProducts]= useState(productsData)
+  const [cart,setCart]=useState([])
+
+  function handleAdd(product){
+
+setCart([...cart,{done:false,price:product.price,id:product.id,count:1,content:product.content}])
+  
+}
+
+
+function handleDelete(cartItem){
+
+
+setCart(cart.filter((item)=>(
+  cartItem.id!==item.id
+)))
+
+}
 
   return (
 <>
@@ -39,10 +56,10 @@ function App() {
   <Navbar/>
 <Routes>
 <Route path="/products" exact element={
-    <Products products={products} />
+    <Products onAdd={handleAdd} products={products} />
 }/>
 <Route path="/cart" exact element={
-    <Cart/>
+    <Cart onDelete={handleDelete} cart={cart}/>
 }/>
 
 
