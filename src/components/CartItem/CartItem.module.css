@@ -1,0 +1,41 @@
+.check{
+padding: 1rem;
+
+}
+.itemCount{
+
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.content{
+font-weight: bold;
+font-size: 1.2rem;
+/* text-align: justify; */
+width:30%;
+}
+.price{
+font-size: 1.1rem;
+font-weight: bold;
+}
+.countContainer{
+    display: flex;
+    justify-self: flex-end;
+
+}
+.count{
+    padding: 1rem;
+}
+.plus{
+padding: 1rem;
+font-size: 1.3rem;
+
+}
+.minus{
+    font-size: 1.3rem;
+    padding: 1rem;
+
+}
