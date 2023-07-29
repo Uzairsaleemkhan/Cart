@@ -33,9 +33,38 @@ function App() {
   const [cart,setCart]=useState([])
 
   function handleAdd(product){
+   
+    if(cart.length>0){
+      let goNext=false;
 
-setCart([...cart,{done:false,price:product.price,id:product.id,count:1,content:product.content}])
-  
+      let arr=cart.map((item)=>{
+        if(item.id===product.id){
+          goNext=true
+          return {...item,count:item.count+1}
+        }
+        else{
+          return item
+        }
+
+
+
+      })
+if(goNext){
+  setCart(arr)
+}
+else{
+
+  setCart([...cart,{done:false,price:product.price,id:product.id,count:1,content:product.content}])
+}
+
+
+
+    }
+    else{
+      setCart([{done:false,price:product.price,id:product.id,count:1,content:product.content}])
+    }
+console.log(cart)
+
 }
 
 
