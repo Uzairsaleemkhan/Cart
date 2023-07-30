@@ -10,7 +10,7 @@ const dummy=[
     { count:1, id:3,content:"Book",price:33,done:false},
     { count:1, id:4,content:"Keyboard",price:80,done:false},
 ]
-export default function Cart({cart,onDelete}){
+export default function Cart({cart,onAdd,onMinus,onDelete}){
 
     // const [cart,setCart]=useState(dummy)
 
@@ -29,7 +29,7 @@ return (
         {
             cart.map((item)=>(
                 <li key={item.id} className={styles.listItem}>
-                    <CartItem onDelete={onDelete} item={item} />
+        <CartItem onMinus={onMinus} onAdd={onAdd} onDelete={onDelete} item={item} />
                 </li>
             ))}
         

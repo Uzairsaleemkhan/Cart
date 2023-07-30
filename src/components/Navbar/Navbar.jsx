@@ -8,8 +8,8 @@ export default function Navbar(){
 
         <div className={styles.navbar}>
 
-            <NavLink to="/cart">CART</NavLink>
-            <NavLink to="/products">PRODUCTS</NavLink>
+            <NavLink className={styles.item} to="/cart">CART</NavLink>
+            <NavLink className={styles.item} to="/products">PRODUCTS</NavLink>
 
         </div>
     )

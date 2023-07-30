@@ -71,6 +71,32 @@ function App() {
     console.log(cart);
   }
 
+  function handleMinus(item){
+setCart(
+  cart.map((cartItem)=>{
+    if(cartItem.id===item.id){
+      return{...cartItem,count:cartItem.count-1}
+    }
+    else{
+      return cartItem
+    }
+  })
+)
+
+setCart(prev=>(
+  prev.filter((cartItem)=>{
+
+   return cartItem.count>0
+  }
+  )
+)
+)
+
+
+
+  }
+
+
   function handleDelete(cartItem) {
     setCart(cart.filter((item) => cartItem.id !== item.id));
   }
@@ -89,11 +115,12 @@ function App() {
             <Route
               path="/cart"
               exact
-              element={<Cart onDelete={handleDelete} cart={cart} />}
+              element={ <Cart onMinus={handleMinus} onAdd={handleAdd} onDelete={handleDelete} cart={cart} />}
             />
           </Routes>
         </BrowserRouter>
       </div>
+    
     </>
   );
 }
